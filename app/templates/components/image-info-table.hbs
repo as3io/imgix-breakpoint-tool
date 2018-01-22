@@ -1,0 +1,14 @@
+
+<thead>
+  <tr><th>Type</th><th>File Size</th><th>Dimensions</th><th>Aspect Ratio</th><th>Orientation</th><th>Link</th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>{{ info.type }}</td>
+    <td>{{ info.filesize }}</td>
+    <td>{{ info.dimensions }}</td>
+    <td>{{ info.aspectRatio }} ({{ info.ratioRounded }})</td>
+    <td>{{ info.orientation }}</td>
+    <td><a href={{ info.src }} target="_blank" rel="noopener noreferrer" title="Original image source, as a raw image.">Source</a></td>
+  </tr>
+</tbody>

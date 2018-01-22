@@ -1,0 +1,37 @@
+
+<h6 class="card-subtitle mb-3">Loads a preview image for each type of "automatic" crop.</h6>
+<p class="card-text">You can also enable focal point cropping by selecting a relative X/Y coordinate above. Simply click on the original image where the focal point should be set.</p>
+<div class="row">
+  <div class="col-lg-6">
+    <form {{action "run" on="submit"}}>
+
+
+      <div class="form-group">
+        <label for="crop-test--preview-width">Preview Width</label>
+        <div class="input-group">
+          {{input class="form-control" type="number" name="previewWidth" min="100" max="1920" value=previewWidth}}
+          <div class="input-group-append">
+            <span class="input-group-text">px</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Aspect Ratios to Compare</label>
+
+        {{#power-select-multiple
+          options=units.ratios
+          selected=selectedRatios
+          searchField="label"
+          onchange=(action (mut selectedRatios))
+          as |ratio|
+        }}
+          {{ratio.label}}
+        {{/power-select-multiple}}
+
+      </div>
+      <button class="btn btn-primary" type="submit">Run Comparison</button>
+
+    </form>
+  </div>
+</div>

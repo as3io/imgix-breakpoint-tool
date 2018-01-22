@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col">
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Original (Scaled)</h5>
+        <div class="row">
+          <div class="col-lg-5 mb-3 mb-lg-0">
+            {{image-blob class="img-fluid img-thumbnail" src=model.src blob=model.blob on-load=(action "setImageInfo") on-click=(action "setFocalPoint")}}
+          </div>
+          <div class="col-lg-7">
+            <h6>Image Information</h6>
+            {{image-info-table class="table-sm table-responsive" info=imageInfo}}
+            <h6>Current Focal Point</h6>
+            {{image-focal-point class="mb-3" focalpoint=focalpoint on-clear=(action "clearFocalPoint")}}
+            <div class="alert alert-info">
+              Detected device pixel ratio (DPR): <strong>{{device-pixel-ratio}}</strong>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Compare Crops</a>
+                  </li>
+                  {{!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li> --}}
+                </ul>
+              </div>
+              <div class="card-body">
+                {{compare-crops originalSrc=imageInfo.src focalpoint=focalpoint on-run=(action "setTest")}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{{#if test.component}}
+  {{component test.component props=test.props}}
+{{/if}}

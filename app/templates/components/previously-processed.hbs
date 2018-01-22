@@ -1,0 +1,10 @@
+<div class="card-body">
+  <div class="media">
+    <img class="align-self-start mr-3" src={{thumbnail}} alt={{url}} title={{url}}>
+    <div class="media-body">
+      <h5 class="mt-0">{{parsed.host}}</h5>
+      <input type="text" class="form-control form-control-sm" readonly="readonly" value={{parsed.pathname}}>
+      <button type="button" class="btn btn-sm btn-primary mt-1" {{action "fetch"}} title="Fetch previously process image.">Fetch</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{{#each props.ratios as |ratio|}}
+  <div class="row">
+    <div class="col-12">
+      <h2>{{ratio.label}}</h2>
+    </div>
+  </div>
+  <div class="row mb-3">
+    {{#each ratio.crops as |crop|}}
+      <div class="col-sm-6 col-lg-3">
+
+        <img src="{{crop.src}}" class="img-fluid img-thumbnail">
+        <span class="figure-caption">{{crop.label}} ({{ratio.label}})</span>
+
+      </div>
+    {{/each}}
+  </div>
+  <hr>
+{{/each}}
+
+
+
+{{!-- <table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Aspect Ratio</th>
+      {{#each props.cropTypes as |cropType|}}
+        <th>{{cropType.label}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each props.selectedRatios as |ratio|}}
+      <tr>
+        <td><h5>{{ratio.label}}</h5></td>
+      </tr>
+    {{/each}}
+  </tbody>
+
+</table> --}}

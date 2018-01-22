@@ -1,0 +1,19 @@
+<div class="input-group mr-2">
+  <div class="input-group-prepend">
+    <div class="input-group-text">X</div>
+  </div>
+  <input type="number" class="form-control" readonly="readonly" min="0" max="100" value={{focalpoint.xPct}}>
+  <div class="input-group-append">
+    <div class="input-group-text">%</div>
+  </div>
+</div>
+<div class="input-group mr-2">
+  <div class="input-group-prepend">
+    <div class="input-group-text">Y</div>
+  </div>
+  <input type="number" class="form-control" readonly="readonly" min="0" max="100" value={{focalpoint.yPct}}>
+  <div class="input-group-append">
+    <div class="input-group-text">%</div>
+  </div>
+</div>
+<button type="button" class="btn btn-warning" {{action "clear"}}>Clear</button>

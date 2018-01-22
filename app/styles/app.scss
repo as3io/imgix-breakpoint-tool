@@ -1,0 +1,11 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Fixes
+.custom-select {
+  // For whatever reason, these aren't being applied?? Bootswatch?
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+@import "ember-power-select";
+@import 'ember-power-select/themes/bootstrap';
